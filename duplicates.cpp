@@ -36,7 +36,7 @@ int main()
 
     vector <int> xy = duplicate(x, y); //vector to store the duplicates
 
-     cout <<"Duplicares are: "<<endl; //print out the duplicates
+     cout <<"Duplicates are: "<<endl; //print out the duplicates
     for (int i=0; i < (int)xy.size(); i++)
     {
         if (i!=xy.size()-1)
