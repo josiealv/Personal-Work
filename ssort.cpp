@@ -90,5 +90,6 @@ int main()
    
     delete one;
     delete five;
+    delete zero;
     return 0;
 }
