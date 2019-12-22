@@ -1,18 +1,13 @@
 #include <iostream>
 #include <time.h>
+#include <curses.h>
 #include "ball.h"
+#include "game.h"
+#include "paddle.h"
 using namespace std;
 int main()
 {
-  Ball ball(0, 0);
-  cout << ball << endl;
-  ball.randomDir();
-  cout << ball << endl; 
-  ball.Move();
-  cout << ball << endl;
-  ball.randomDir();
-  ball.Move();
-  cout << ball << endl;
-
+  Game g(40, 20);
+  g.Play();
   return 0;
 }

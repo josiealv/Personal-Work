@@ -1,7 +1,6 @@
 #include "ball.h"
 #include <iostream>
 using namespace std;
-//enum dir{STOP=0, LEFT=1, UPLEFT=2, DOWNLEFT=3, RIGHT=4, UPRIGHT=5, DOWNRIGHT=6};
 
 Ball::Ball(int posx, int posy): ogx(posx), ogy(posy) //constructor for ball that gives its start position
 {
