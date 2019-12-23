@@ -2,3 +2,10 @@
 *fibonacci_number
 *decimal_to_binary
 *palindrome_checker
+*pong
+#.o files
+*.o
+
+#VS Code stuff
+*.DS_Store
+*vcpkg/
