@@ -1,4 +1,4 @@
-##Simple Pong Game
+## Simple Pong Game
 
     A very simple pong game written in C++. 
     Rules are essantially the same.
