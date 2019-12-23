@@ -17,9 +17,3 @@ int Paddle::getx() {return x;}
 int Paddle::gety() {return y;}
 void Paddle::MoveUp() {y--;}
 void Paddle::MoveDown() {y++;}
-
-std::ostream& operator<<(ostream& o, const Paddle& p) 
-{
-      o << "Paddle [" << p.x << ", " << p.y << "]";
-      return o;
-}

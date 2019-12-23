@@ -248,4 +248,6 @@ void Game::Draw()
         cout << "#";
     }
     cout << endl;
+    cout << "Press 'q' to quit" << endl;
+    cout << "P1 score: " << p1_score << " P2 score: " << p2_score << endl; 
 }

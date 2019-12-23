@@ -58,8 +58,3 @@ void Ball::Move () //get out the way, get out the way!
           break;             
       }
 }
-std::ostream& operator<<(ostream& o, const Ball& b) 
-{
-      o << "Ball [" << b.x << ", " << b.y << "][" << b.direction << "]";
-      return o;
-}

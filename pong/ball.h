@@ -1,6 +1,5 @@
 #ifndef BALL_H
 #define BALL_H
-#include <iostream>
 enum dir{STOP=0, LEFT=1, UPLEFT=2, DOWNLEFT=3, RIGHT=4, UPRIGHT=5, DOWNRIGHT=6};
 class Ball
 {
@@ -12,7 +11,6 @@ class Ball
         int gety();
         dir getDirection ();
         void Move ();
-        friend std::ostream& operator <<(std::ostream& o, const Ball& b);
         void reset(); //resets the ball to its original position from the start of the game
 
     private:
