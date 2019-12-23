@@ -1,7 +1,6 @@
 #include "game.h"
 #include <time.h>
 #include <curses.h>
-#include <stdio.h>
 #include <iostream>
 using namespace std;
 
@@ -39,54 +38,71 @@ void Game::score_incr(Paddle* player)
     p1->reset();
     p2->reset();
 }
+int Game::kbhit() //detects if the keyboard has been hit 
+{
+    int get = getch();
+
+    if (get != ERR) 
+    {
+        ungetch(get);
+        return 1;
+    } 
+    else 
+    {
+        return 0;
+    }
+}
 void Game::input()
 {
-   /* initscr();
+    ball->Move();
+    int p1y = p1->gety();
+    int p2y = p2->gety();
+    initscr();
     cbreak();
     noecho();
     nodelay(stdscr, TRUE);
-    endwin();*/
-    ball->Move();
-    char input = cin.get();
-    int p1y = p1->gety();
-    int p2y = p2->gety();
-    
-    if (input ==up_p1)
+    scrollok(stdscr, TRUE);
+    if (kbhit())
     {
-        if(p1y>0)
+        char input = getchar();
+        if (input ==up_p1)
         {
-            p1->MoveUp();
+            if(p1y>0)
+            {
+                p1->MoveUp();
+            }
+        }
+        if (input==up_p2)
+        {
+            if (p2y>0)
+            {
+                p2->MoveUp();
+            }
+        }
+        if (input==down_p1)
+        {
+            if (p1y+4 < height) //cause we have 4 segements
+            {
+                p1->MoveDown();
+            }
+        }
+        if (input==down_p2)
+        {
+            if (p2y+4 < height)
+            {
+                p2->MoveDown();
+            }
+        }
+        if (ball->getDirection()==STOP) //randomize direction of ball if we are at the start of the game
+        {
+            ball->randomDir();
+        }
+        if (input=='q')
+        {
+            end=true;
         }
     }
-    if (input==up_p2)
-    {
-        if (p2y>0)
-        {
-            p2->MoveUp();
-        }
-    }
-    if (input==down_p1)
-    {
-        if (p1y+4 < height) //cause we have 4 segements
-        {
-            p1->MoveDown();
-        }
-    }
-    if (input==down_p2)
-    {
-        if (p2y+4 < height)
-        {
-            p2->MoveDown();
-        }
-    }
-    if (ball->getDirection()==STOP) //randomize direction of ball if we are at the start of the game
-    {
-        ball->randomDir();
-    }
-    if (input=='q')
-    {
-        end=true;
-    }
+    endwin();
 }
 void Game::Collide() //with the Sky
 {
@@ -232,5 +248,4 @@ void Game::Draw()
         cout << "#";
     }
     cout << endl;
-
 }
