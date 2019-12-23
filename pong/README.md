@@ -7,7 +7,7 @@
 
 **Game Legend**
 
-    ~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
     Press 'b' to begin
     Press 'q' to quit
 
@@ -20,5 +20,5 @@
         'k' to move down
 
     Moving the ball:
-        Press and/or hold any key to move the ball        
-    ~~~~
+        Press and/or hold any key to move the ball
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
