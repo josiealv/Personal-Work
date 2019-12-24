@@ -20,10 +20,6 @@ Item* FindMin(Item *head)
   
     // traverse the whole doubly linked list 
     while (temp != NULL) { 
-  
-        /* if temp's data is greater than 
-           max's data, then put max = temp 
-           and return max->data */
         if (temp->value < min ->value) 
             {min = temp; }
   
